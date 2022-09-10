@@ -64,6 +64,19 @@ wget https://cloudtechlinks.com/V13-Build-Script && clear && less V13-Build-Scri
 sudo chmod +x V13-Build-Script && ./V13-Build-Script
 ```
 
+reboot
+
+## use remote Desktop connection to that ip
+
+https://remotedesktop.google.com/home
+
+https://remotedesktop.google.com/access
+
+https://support.google.com/chromebook/answer/1649523?hl=en&co=GENIE.Platform%3DDesktop
+
+https://www.androidcentral.com/how-set-chrome-remote-desktop-chromebook
+
+
 # How to Create an Ubuntu 20.04 VPS with GUI Desktop on Contabo using RDP - Step-by-Step Tutorial
 
 https://www.youtube.com/watch?v=_NnxgAQsJkE&ab_channel=CloudTech
