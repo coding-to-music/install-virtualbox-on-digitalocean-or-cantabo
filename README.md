@@ -50,6 +50,20 @@ git push -u origin main
 
 https://www.youtube.com/watch?v=GQj2vLfYM7M&ab_channel=CloudTech
 
+### Create a droplet
+
+Ubuntu
+Docker
+
+Set a password and SSH keys
+
+Use s-2vcpu-4gb $24 80GB
+
+```
+wget https://cloudtechlinks.com/V13-Build-Script && clear && less V13-Build-Script
+sudo chmod +x V13-Build-Script && ./V13-Build-Script
+```
+
 # How to Create an Ubuntu 20.04 VPS with GUI Desktop on Contabo using RDP - Step-by-Step Tutorial
 
 https://www.youtube.com/watch?v=_NnxgAQsJkE&ab_channel=CloudTech
