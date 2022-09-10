@@ -1,8 +1,8 @@
-# install-virtualbox-on-digitalocean-or-cantabo
+# install-virtualbox-on-digitalocean-or-contabo
 
 # 🚀 Install Virtualbox on a DigitalOcean VPS Droplet (with xRDP & XFCE) 🚀
 
-https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-cantabo
+https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-contabo
 
 From / By Cloud Tech https://www.youtube.com/channel/UCkuFlqmZ5icX0WIjRDUUjAA/featured
 
@@ -23,6 +23,10 @@ https://slugs.do-api.dev
 # s-4vcpu-8gb         $48   160GB
 ```
 
+# Contabo prices
+
+![image](https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-contabo/blob/main/images/contabo-prices-2022.png?raw=true)
+
 ## Environment variables:
 
 ```java
@@ -37,7 +41,7 @@ git add .
 git remote remove origin
 git commit -m "first commit"
 git branch -M main
-git remote add origin git@github.com:coding-to-music/install-virtualbox-on-digitalocean-or-cantabo.git
+git remote add origin git@github.com:coding-to-music/install-virtualbox-on-digitalocean-or-contabo.git
 git push -u origin main
 ```
 

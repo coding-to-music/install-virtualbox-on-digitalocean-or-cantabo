@@ -1,5 +1,5 @@
 {
-  "name": "install-virtualbox-on-digitalocean-or-cantabo",
+  "name": "install-virtualbox-on-digitalocean-or-contabo",
   "version": "1.0.0",
   "description": "# 🚀 Install Virtualbox on a DigitalOcean VPS Droplet (with xRDP & XFCE) 🚀",
   "main": "index.js",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-cantabo.git"
+    "url": "git+https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-contabo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-cantabo/issues"
+    "url": "https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-contabo/issues"
   },
-  "homepage": "https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-cantabo#readme"
+  "homepage": "https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-contabo#readme"
 }
