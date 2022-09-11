@@ -13,6 +13,7 @@ https://github.com/andrewsomething/do-api-slugs
 https://slugs.do-api.dev
 
 ```
+DigitalOcean
 # https://slugs.do-api.dev/
 
 # s-1vcpu-512mb-10gb  $4    10GB
@@ -23,7 +24,14 @@ https://slugs.do-api.dev
 # s-4vcpu-8gb         $48   160GB
 ```
 
-# Contabo prices
+## Contabo prices
+
+```
+# s-4vcpu-8gb         $7     200 GB  ($48  at DigitalOcean s-4vcpu-8gb)
+# s-6vcpu-16gb        $12    400 GB  ($96  at DigitalOcean s-8vcpu-16gb)
+# s-8vcpu-30gb        $20    800 GB  ($168 at DigitalOcean m-4vcpu-32gb)
+# s-10vcpu-60gb       $35   1600 GB  ($336 at DigitalOcean m-8vcpu-64gb)
+```
 
 ![image](https://github.com/coding-to-music/install-virtualbox-on-digitalocean-or-contabo/blob/main/images/contabo-prices-2022.png?raw=true)
 
