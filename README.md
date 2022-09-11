@@ -62,6 +62,7 @@ Use s-2vcpu-4gb $24 80GB
 ```
 wget https://cloudtechlinks.com/V13-Build-Script && clear && less V13-Build-Script
 sudo chmod +x V13-Build-Script && ./V13-Build-Script
+
 ```
 
 reboot
