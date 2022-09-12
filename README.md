@@ -92,6 +92,8 @@ reboot
 
 ## install Chrome Remote Desktop
 
+https://remotedesktop.google.com/headless
+
 Use console to connect via ssh to the droplet
 
 ```
