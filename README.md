@@ -71,9 +71,22 @@ Use s-2vcpu-4gb $24 80GB
 wget https://cloudtechlinks.com/V13-Build-Script && clear && less V13-Build-Script
 sudo chmod +x V13-Build-Script && ./V13-Build-Script
 
+# or use the file in the scripts directory which also installs the DigitalOcean Monitoring Agent and could be other modifications
+
+cd scripts
+
+./V13-Build-Script
 ```
 
+Monitor progress of the script
+
+```
+tail -500 /var/log/cloud-init.log
+```
+
+```
 reboot
+```
 
 ## V13-ubuntu-20.04-build-script-v01
 
@@ -94,7 +107,7 @@ function run-cmd ()
  read -t 10 -p ""
  $1
  echo ""
- 
+
 }
 
 # update all repostory indexes so they point to the latest packages #
@@ -123,14 +136,14 @@ run-cmd "echo 'xfce4-session' > /root/.xsession"
 # the above command is for presentation only. the nested quotes i needed were causing
 # poblems , so i had to hard code the command and run it on the following line
 echo "xfce4-session" > /root/.xsession
- 
+
 # install the version of Virtualbox from the repository #
 #-------------------------------------------------------#
-run-cmd "sudo apt-get install virtualbox -y" 
+run-cmd "sudo apt-get install virtualbox -y"
 
 # install the extenionpack as it contains the Virtualbox RDP Server #
 #-------------------------------------------------------------------#
-run-cmd "sudo apt install virtualbox-ext-pack -y" 
+run-cmd "sudo apt install virtualbox-ext-pack -y"
 
 # show the current status of the firewall #
 #-----------------------------------------#
@@ -177,7 +190,6 @@ https://remotedesktop.google.com/access
 https://support.google.com/chromebook/answer/1649523?hl=en&co=GENIE.Platform%3DDesktop
 
 https://www.androidcentral.com/how-set-chrome-remote-desktop-chromebook
-
 
 # How to Create an Ubuntu 20.04 VPS with GUI Desktop on Contabo using RDP - Step-by-Step Tutorial
 

@@ -25,6 +25,10 @@ run-cmd "sudo apt-get update"
 #-------------------------------------------------------------------------------#
 run-cmd "sudo apt-get upgrade -y"
 
+# Install the DigitalOcean Metrics Agent #
+#-------------------------------------------------------------------------------#
+run-cmd "curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash"
+
 # install one of the most lightweight desktops #
 #----------------------------------------------#
 run-cmd "sudo apt-get install xfce4 -y"
