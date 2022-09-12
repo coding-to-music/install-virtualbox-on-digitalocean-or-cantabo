@@ -179,6 +179,50 @@ needrestart is being skipped since dpkg has failed
 E: Sub-process /usr/bin/dpkg returned an error code (1)
 ```
 
+## Install Chrome Remote Desktop (Ubuntu 20.04) on Google Cloud 2022
+
+https://www.youtube.com/watch?v=2n4kwxUlX48&ab_channel=ChrisCheng
+
+```
+sudo apt install --assume-yes wget tasksel
+```
+
+```
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+```
+
+```
+sudo apt install ./chrome-remote-desktop_current_amd64.deb
+```
+
+```
+Unpacking tasksel (3.68ubuntu2) ...
+Selecting previously unselected package laptop-detect.
+Preparing to unpack .../laptop-detect_0.16_all.deb ...
+Unpacking laptop-detect (0.16) ...
+dpkg: error processing package libxcb-render-util0:amd64 (--configure):
+ package is in a very bad inconsistent state; you should
+ reinstall it before attempting configuration
+Setting up laptop-detect (0.16) ...
+Setting up tasksel (3.68ubuntu2) ...
+Setting up tasksel-data (3.68ubuntu2) ...
+Processing triggers for man-db (2.10.2-1) ...
+Errors were encountered while processing:
+ libxcb-render-util0:amd64
+needrestart is being skipped since dpkg has failed
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+```
+
+### Set up another computer
+
+https://remotedesktop.google.com/headless
+
+You're nearly finished! Run the following command on the remote computer to complete the setup process. Please note that this command can only be used to set up one computer; click Start over if you have more computers to set up.
+
+```
+DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/big-long-string" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+```
+
 ## V13-ubuntu-20.04-build-script-v01
 
 ```
