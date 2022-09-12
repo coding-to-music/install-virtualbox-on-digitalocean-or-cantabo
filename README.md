@@ -369,10 +369,73 @@ https://support.google.com/chromebook/answer/1649523?hl=en&co=GENIE.Platform%3DD
 
 https://www.androidcentral.com/how-set-chrome-remote-desktop-chromebook
 
+# How to create an Ubuntu 20.04 VPS with GUI on Contabo using RDP - Tutorial - by Cloud Tech
+
+https://www.youtube.com/watch?v=OEK86061KEU&ab_channel=CloudTech
+
 # How to Create an Ubuntu 20.04 VPS with GUI Desktop on Contabo using RDP - Step-by-Step Tutorial
 
 https://www.youtube.com/watch?v=_NnxgAQsJkE&ab_channel=CloudTech
 
-# How to create an Ubuntu 20.04 VPS with GUI on Contabo using RDP - Tutorial
+Cloud Tech
+2.54K subscribers
 
-https://www.youtube.com/watch?v=OEK86061KEU&ab_channel=CloudTech
+I show you step-by-step how you can create a very secure Ubuntu 20.04 VPS with Desktop , from scratch. We are then going to access it by the windows 10 remote desktop connection via RDP by installing XRDP . And finally, how to link it to Google Drive Online Account
+
+Contabo Link : https://cloudtechlinks.com/V30-Contab...
+
+## My Other Videos mentioned in this Video
+
+FREE Server 2019 : https://www.youtube.com/watch?v=so72p...
+FREE Server 2022 : https://www.youtube.com/watch?v=o4vwU...
+
+0.00 The Video Purpose
+2.52 The Ubuntu 20.04 VPS purchase Process
+8.15 Build Ubuntu 20.04 with GUI Desktop via Putty SSH Client
+13.30 Run Remote Desktop Connection and Basic Configuration
+16.20 Enable all Online Accounts including Google Drive on Ubuntu 20.04
+22.10 YouTube End Cards
+
+## Build Ubuntu 20.04 with Desktop via Putty SSH Client Commands
+
+1.  adduser xrdpuser (password : e.g paste se7ye8pc5hs0 )
+2.  usermod -aG sudo,adm xrdpuser && su xrdpuser
+3.  sudo apt-get update && sudo apt-get upgrade -y
+4.  sudo apt-get install ubuntu-desktop mmv htop stacer gnome-software xrdp -y
+5.  sudo rm /usr/share/polkit-1/actions/org.freedesktop.color.policy
+6.  sudo sed -i 's/3389/53579/g' /etc/xrdp/xrdp.ini
+7.  sudo sed -i 's/#Port 22/Port 53572/g' /etc/ssh/sshd_config
+8.  sudo ufw allow 53572 && sudo ufw allow 53579 && sudo ufw enable && sudo ufw status numbered
+9.  sudo reboot
+
+reconnect via SSH port 53572 using xrdpuser
+
+      10) sudo passwd --delete --lock root
+      11) sudo reboot
+
+Connect via The Remote Dektop Connection (RDP) port 53579
+
+Configuration 1) ASAP - On desktop, disable all lock screen settings - on privacy options
+
+How to link Google Drive 1) On the Desktop, In the Terminal Application :
+a) cd /etc/netplan && sudo mmv '\*.yaml' '#1.moved-for-youtube' && ls -la
+b) sudo wget ht tp://files.cloudtech.video/V30-cloudtech.yaml --output-document=v30-cloudtech.yaml && ls -la && cat v30-cloudtech.yaml
+(please remove the spaces in https)
+c) sudo reboot
+
+i) Show how to get a free Google Account
+ii) Connect to Google Drive Online account :ycloudtech@gmail.com
+cloudtech11Q
+
+d) cd /etc/netplan && sudo rm v30-cloudtech.yaml && sudo mmv '\*.moved-for-youtube' '#1.yaml' && ls -la
+e) sudo reboot
+
+- Connecting via RDP from MacOS : https://www.youtube.com/watch?v=x7TCvLuWlF0&ab_channel=Parried
+- Connecting via RDP from Chromebook : https://www.youtube.com/watch?v=4PUraznLMMs&ab_channel=CloudSolvedIT.com
+- Connecting via RDP from Linux : https://opensource.com/article/18/6/linux-remote-desktop
+
+how to create a google account (also knon as a gmail account) :
+https://www.youtube.com/watch?v=lcvWhAgS028&t=0s&ab_channel=PinoyTechTips
+
+Video describing how to create a brand new Google Drive Account (if needed) :
+https://www.youtube.com/watch?v=1uJ1TxklS2Y&t=0s&ab_channel=HowtoGoogle
