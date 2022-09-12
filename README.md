@@ -213,6 +213,47 @@ needrestart is being skipped since dpkg has failed
 E: Sub-process /usr/bin/dpkg returned an error code (1)
 ```
 
+## Run V13-ubuntu-20.04-build-script-v01
+
+```
+dpkg: error processing package virtualbox-qt (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because MaxReports is reached already
+  dpkg: dependency problems prevent configuration of libqt5opengl5:amd64:
+ libqt5opengl5:amd64 depends on libqt5gui5 (>= 5.1.0); however:
+  Package libqt5gui5:amd64 is not configured yet.
+ libqt5opengl5:amd64 depends on libqt5gui5 (>= 5.12.5) | libqt5gui5-gles (>= 5.12.5); however:
+  Package libqt5gui5:amd64 is not configured yet.
+  Package libqt5gui5-gles is not installed.
+ libqt5opengl5:amd64 depends on libqt5widgets5 (>= 5.9.0~beta); however:
+  Package libqt5widgets5:amd64 is not configured yet.
+
+dpkg: error processing package libqt5opengl5:amd64 (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because MaxReports is reached already
+  dpkg: dependency problems prevent configuration of libqt5x11extras5:amd64:
+ libqt5x11extras5:amd64 depends on libqt5gui5 (>= 5.15.3+dfsg~) | libqt5gui5-gles (>= 5.15.3+dfsg~); however:
+  Package libqt5gui5:amd64 is not configured yet.
+  Package libqt5gui5-gles is not installed.
+
+dpkg: error processing package libqt5x11extras5:amd64 (--configure):
+ dependency problems - leaving unconfigured
+No apport report written because MaxReports is reached already
+  Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Errors were encountered while processing:
+ libxcb-render-util0:amd64
+ libqt5gui5:amd64
+ libqt5svg5:amd64
+ libqt5widgets5:amd64
+ qt5-gtk-platformtheme:amd64
+ libqt5printsupport5:amd64
+ virtualbox-qt
+ libqt5opengl5:amd64
+ libqt5x11extras5:amd64
+needrestart is being skipped since dpkg has failed
+```
+
 ### Set up another computer
 
 https://remotedesktop.google.com/headless
