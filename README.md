@@ -398,6 +398,8 @@ FREE Server 2022 : https://www.youtube.com/watch?v=o4vwU...
 
 ## Build Ubuntu 20.04 with Desktop via Putty SSH Client Commands
 
+Follow these steps
+
 1.  adduser xrdpuser (password : e.g paste se7ye8pc5hs0 )
 2.  usermod -aG sudo,adm xrdpuser && su xrdpuser
 3.  sudo apt-get update && sudo apt-get upgrade -y
