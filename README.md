@@ -405,9 +405,15 @@ Follow these steps
 3.  sudo apt-get update && sudo apt-get upgrade -y
 4.  sudo apt-get install ubuntu-desktop mmv htop stacer gnome-software xrdp -y
 5.  sudo rm /usr/share/polkit-1/actions/org.freedesktop.color.policy
-6.  sudo sed -i 's/3389/53579/g' /etc/xrdp/xrdp.ini
+
+sudo ufw reset
+
+Omit this 6. sudo sed -i 's/3389/53579/g' /etc/xrdp/xrdp.ini
+Omit this 8. sudo ufw allow 53572 && sudo ufw allow 53579 && sudo ufw enable && sudo ufw status numbered
+Omit Original - 11. sudo ufw allow 53572 && sudo ufw allow 3389 && sudo ufw enable && sudo ufw status numbered
+
 7.  sudo sed -i 's/#Port 22/Port 53572/g' /etc/ssh/sshd_config
-8.  sudo ufw allow 53572 && sudo ufw allow 53579 && sudo ufw enable && sudo ufw status numbered
+8.  sudo ufw allow 53572 && sudo ufw allow 3389 && sudo ufw enable && sudo ufw status numbered
 9.  sudo reboot
 
 reconnect via SSH port 53572 using xrdpuser
