@@ -90,7 +90,11 @@ tail -500 /var/log/cloud-init.log
 reboot
 ```
 
-## install Chrome Remote Desktop
+## Install Chrome Remote Desktop (Ubuntu 20.04) on Google Cloud 2022
+
+https://www.youtube.com/watch?v=2n4kwxUlX48&ab_channel=ChrisCheng
+
+### install Chrome Remote Desktop
 
 https://remotedesktop.google.com/headless
 
@@ -100,119 +104,8 @@ Use console to connect via ssh to the droplet
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 ```
 
-## Install .deb files in the command line
-
-If you want to install deb packages in the command line, you can use either the apt command or the dpkg command. The apt command uses the dpkg command underneath it, but apt is more popular and easier to use.
-
-If you want to use the apt command for deb files, use it like this:
-
-```
-sudo apt install path_to_deb_file
-```
-
-If you want to use the dpkg command for installing deb packages, here’s how to do it:
-
-```
-sudo dpkg -i path_to_deb_file
-```
-
-In both commands, you should replace path_to_deb_file with the path and name of the deb file you’ve downloaded.
-
-## I needed to run this:
-
-```
-sudo dpkg --configure -a
-
-sudo apt install ./chrome-remote-desktop_current_amd64.deb
-```
-
-Output
-
-```
-Selecting previously unselected package chrome-remote-desktop.
-Preparing to unpack .../chrome-remote-desktop_current_amd64.deb ...
-Unpacking chrome-remote-desktop (106.0.5249.7) ...
-Setting up xvfb (2:21.1.3-2ubuntu2.1) ...
-Setting up xbase-clients (1:7.7+23ubuntu2) ...
-dpkg: error processing package libxcb-render-util0:amd64 (--configure):
- package is in a very bad inconsistent state; you should
- reinstall it before attempting configuration
-Setting up python3-psutil (5.9.0-1build1) ...
-Setting up chrome-remote-desktop (106.0.5249.7) ...
-Restarting Chrome Remote Desktop hosts (sessions will be unaffected)...
-Processing triggers for man-db (2.10.2-1) ...
-Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
-Errors were encountered while processing:
- libxcb-render-util0:amd64
-needrestart is being skipped since dpkg has failed
-N: Download is performed unsandboxed as root as file '/root/deb-file/chrome-remote-desktop_current_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
-E: Sub-process /usr/bin/dpkg returned an error code (1)
-```
-
-Try it again, but without sudo
-
-```
-apt install ./chrome-remote-desktop_current_amd64.deb
-```
-
-Output
-
-```
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-Note, selecting 'chrome-remote-desktop' instead of './chrome-remote-desktop_current_amd64.deb'
-chrome-remote-desktop is already the newest version (106.0.5249.7).
-The following packages were automatically installed and are no longer required:
-  dctrl-tools dkms libdouble-conversion3 libmd4c0 libpcre2-16-0 libqt5core5a libqt5dbus5 libqt5network5
-  libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0
-Use 'apt autoremove' to remove them.
-0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
-1 not fully installed or removed.
-Need to get 0 B/10.3 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] y
-dpkg: error processing package libxcb-render-util0:amd64 (--configure):
- package is in a very bad inconsistent state; you should
- reinstall it before attempting configuration
-Errors were encountered while processing:
- libxcb-render-util0:amd64
-needrestart is being skipped since dpkg has failed
-E: Sub-process /usr/bin/dpkg returned an error code (1)
-```
-
-## Install Chrome Remote Desktop (Ubuntu 20.04) on Google Cloud 2022
-
-https://www.youtube.com/watch?v=2n4kwxUlX48&ab_channel=ChrisCheng
-
-```
-sudo apt install --assume-yes wget tasksel
-```
-
-```
-wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-```
-
 ```
 sudo apt install ./chrome-remote-desktop_current_amd64.deb
-```
-
-```
-Unpacking tasksel (3.68ubuntu2) ...
-Selecting previously unselected package laptop-detect.
-Preparing to unpack .../laptop-detect_0.16_all.deb ...
-Unpacking laptop-detect (0.16) ...
-dpkg: error processing package libxcb-render-util0:amd64 (--configure):
- package is in a very bad inconsistent state; you should
- reinstall it before attempting configuration
-Setting up laptop-detect (0.16) ...
-Setting up tasksel (3.68ubuntu2) ...
-Setting up tasksel-data (3.68ubuntu2) ...
-Processing triggers for man-db (2.10.2-1) ...
-Errors were encountered while processing:
- libxcb-render-util0:amd64
-needrestart is being skipped since dpkg has failed
-E: Sub-process /usr/bin/dpkg returned an error code (1)
 ```
 
 ## Run V13-ubuntu-20.04-build-script-v01
