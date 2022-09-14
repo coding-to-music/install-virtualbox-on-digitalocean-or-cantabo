@@ -340,3 +340,56 @@ https://www.youtube.com/watch?v=lcvWhAgS028&t=0s&ab_channel=PinoyTechTips
 
 Video describing how to create a brand new Google Drive Account (if needed) :
 https://www.youtube.com/watch?v=1uJ1TxklS2Y&t=0s&ab_channel=HowtoGoogle
+
+# View running processes and thier memory usage
+
+```
+echo "USER                 RSS      PROCS" ; echo "-------------------- -------- -----" ; ps hax -o rss,user | awk '{rss[$2]+=$1;procs[$2]+=1;}END{for(user in rss) printf "%-20s %8.0f %5.0f\n", user, rss[user]/1024, procs[user];}' | sort -rnk2
+```
+
+Contabo
+
+```
+USER                 RSS      PROCS
+-------------------- -------- -----
+xrdpuser                 2034    80
+root                      222   112
+colord                     14     1
+systemd-resolve            13     1
+whoopsie                   12     1
+systemd-network             7     1
+systemd-timesync            6     1
+messagebus                  6     1
+syslog                      4     1
+avahi                       4     2
+rtkit                       3     1
+xrdp                        2     1
+kernoops                    1     2
+```
+
+DigitalOcean
+
+```
+USER                 RSS      PROCS
+-------------------- -------- -----
+tmc                      1920    75
+gdm                       745    46
+root                      661   145
+telegraf                   98     1
+influxdb                   96     1
+nobody                     91     2
+472                        86     1
+do-agent                   17     1
+whoopsie                   15     1
+colord                     14     1
+systemd-resolve            12     1
+systemd-network             8     1
+systemd-timesync            6     1
+messagebus                  6     1
+syslog                      5     1
+avahi                       4     2
+rtkit                       3     1
+daemon                      2     1
+xrdp                        1     1
+kernoops                    1     2
+```
