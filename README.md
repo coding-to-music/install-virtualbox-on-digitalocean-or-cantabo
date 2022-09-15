@@ -393,3 +393,13 @@ daemon                      2     1
 xrdp                        1     1
 kernoops                    1     2
 ```
+
+## Set GNOME desktop appearance theme to Dark
+
+https://www.reddit.com/r/Ubuntu/comments/ued44y/2204_vanilla_gnome_no_appearance_setting_tab/
+
+Try running this in a terminal:
+
+```
+XDG_CURRENT_DESKTOP=ubuntu:GNOME gnome-control-center
+```
