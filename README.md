@@ -118,6 +118,8 @@ gh auth status
 
 ### verify can connect to GitHub:
 
+chmod 600 both public and private keys in .ssh
+
 ```
 ssh -vT git@github.com
 ```
