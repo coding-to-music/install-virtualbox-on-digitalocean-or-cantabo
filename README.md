@@ -90,6 +90,38 @@ tail -500 /var/log/cloud-init.log
 reboot
 ```
 
+# Install gh GitHub CLI
+
+https://cli.github.com
+
+https://github.com/cli/cli
+
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
+```
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+```
+
+### login to GitHub:
+
+```
+gh auth login
+
+# verify
+
+gh auth status
+```
+
+### verify can connect to GitHub:
+
+```
+ssh -vT git@github.com
+```
+
 ## Install Chrome Remote Desktop (Ubuntu 20.04) on Google Cloud 2022
 
 https://www.youtube.com/watch?v=2n4kwxUlX48&ab_channel=ChrisCheng
