@@ -398,3 +398,75 @@ Try running this in a terminal:
 ```
 XDG_CURRENT_DESKTOP=ubuntu:GNOME gnome-control-center
 ```
+
+## Change Your SSH Port in Linux
+To grand you all the necessary admin rights, always enter the command sudo -i at the beginning of every session:
+
+```
+sudo -i
+```
+
+This command will grant you the rights of a power user, so you don’t have to write the command sudo at the beginning of every command line. To change your SSH Port, follow the instructions:
+
+Connect to your Contabo server as instructed in chapter 2.2.
+
+Now you have to access and edit sshd_config file. Let’s use the vi text editor in this case:
+
+```
+vi /etc/ssh/sshd_config
+```
+
+Find the line containing Port 22.
+
+Replace the number with any value from 1024 to 65536 (command “I” in the vi editor). If there is a hashtag symbol next to “Port”, erase it.
+
+Save and exit the sshd_config file (type command “:wq” in the vi editor).
+
+Restart the SSH service using:
+
+```
+systemctl restart ssh
+```
+
+Don’t forget to adjust your firewall depending on your Linux version. For instance, in case you use Debian or Ubuntu with a default UFW firewall, type:
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04
+
+```
+ufw allow <PORT_NUMBER>/tcp
+
+sudo systemctl ufw status
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow 52222/tcp
+sudo ufw deny 22/tcp
+sudo ufw enable
+
+sudo ufw status 
+
+sudo ufw status verbose
+
+sudo ufw status numbered
+
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+52222/tcp                  ALLOW IN    Anywhere                  
+22/tcp                     DENY IN     Anywhere                  
+52222/tcp (v6)             ALLOW IN    Anywhere (v6)             
+22/tcp (v6)                DENY IN     Anywhere (v6) 
+```
+
+## Step 5 — Allowing Other Connections
+
+At this point, you should allow all of the other connections that your server needs to respond to. The connections that you should allow depends on your specific needs. Luckily, you already know how to write rules that allow connections based on a service name or port; we already did this for SSH on port 22. You can also do this for:
+
+- HTTP on port 80, which is what unencrypted web servers use, using sudo ufw allow http or sudo ufw allow 80
+- HTTPS on port 443, which is what encrypted web servers use, using sudo ufw allow https or sudo ufw allow 443
+
