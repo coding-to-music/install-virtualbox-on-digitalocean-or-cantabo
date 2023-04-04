@@ -463,6 +463,39 @@ To                         Action      From
 22/tcp (v6)                DENY IN     Anywhere (v6) 
 ```
 
+## verify ufw status after reboot
+
+```
+sudo systemctl status ufw
+```
+
+Output
+
+```
+● ufw.service - Uncomplicated firewall
+     Loaded: loaded (/lib/systemd/system/ufw.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Mon 2023-04-03 23:37:50 CDT; 14h ago
+       Docs: man:ufw(8)
+    Process: 296 ExecStart=/lib/ufw/ufw-init start quiet (code=exited, status=0/SUCCESS)
+   Main PID: 296 (code=exited, status=0/SUCCESS)
+
+Apr 03 23:37:50 vmi1240539.contaboserver.net systemd[1]: Finished Uncomplicated firewall.
+```
+
+To view the logs for ufw on a system that has been rebooted, you can use the journalctl command with the -u option to specify the ufw service. For example, to view the ufw logs for the current boot, you can run the following command:
+
+```
+sudo journalctl -u ufw.service
+```
+
+This will display the ufw logs for the current boot, including any log entries that were created during the previous boot. If you want to view the logs for a specific time range, you can use the --since and --until options. For example, to view the ufw logs for the past 24 hours, you can run the following command:
+
+```
+sudo journalctl -u ufw.service --since "24 hours ago"
+```
+
+This will display the ufw logs for the past 24 hours, including any log entries that were created during the previous boot. You can adjust the time range as needed to view the logs for a specific period.
+
 ## Step 5 — Allowing Other Connections
 
 At this point, you should allow all of the other connections that your server needs to respond to. The connections that you should allow depends on your specific needs. Luckily, you already know how to write rules that allow connections based on a service name or port; we already did this for SSH on port 22. You can also do this for:
