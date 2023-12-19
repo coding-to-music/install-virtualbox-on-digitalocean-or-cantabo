@@ -121,6 +121,8 @@ gh auth status
 chmod 600 both public and private keys in .ssh
 
 ```
+# chmod 600 both public and private keys in .ssh
+
 ssh -vT git@github.com
 ```
 
@@ -142,7 +144,220 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo apt install ./chrome-remote-desktop_current_amd64.deb
 ```
 
-## Install yarn, npm, node
+## install node, nvm
+
+### Install nvm
+
+```java
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+Ensure paths are set up and restart the terminal to cause `source ~/.bashrc`
+
+```java
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+### Install node 16, 18, 20
+
+```java
+nvm install 16
+nvm install 18
+nvm install 20
+nvm use 18
+nvm list
+```
+
+Output
+
+```java
+       v16.20.2
+->     v18.19.0
+       v20.10.0
+default -> 18 (-> v18.19.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v20.10.0) (default)
+stable -> 20.10 (-> v20.10.0) (default)
+lts/* -> lts/iron (-> v20.10.0)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.3 (-> N/A)
+lts/gallium -> v16.20.2
+lts/hydrogen -> v18.19.0
+lts/iron -> v20.10.0
+```
+
+## Install npm
+
+Should already be installed as part of node
+
+```java
+npm --version
+```
+
+Output
+
+```java
+10.2.5
+```
+
+## Install yarn
+
+install globally with `-g`
+
+```java
+npm install -g yarn
+
+yarn --version
+```
+
+Output
+
+```java
+1.22.21
+```
+
+## install pyenv and virtualenv
+
+https://github.com/pyenv/pyenv?tab=readme-ov-file#usage
+
+```java
+curl https://pyenv.run | bash
+```
+
+if needed, run this to make changes to `.bashrc`
+
+```java
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+```
+
+### Install pyenv build dependancies such as C or gcc
+
+https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+
+for Ubuntu / Debian:
+
+```java
+sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
+
+### pyenv Usage
+
+### Install additional Python versions
+
+To install additional Python versions, use `pyenv install`
+
+For example, to download and install Python `3.10.4`, run:
+
+```java
+pyenv install 3.10.4
+
+# set the global python version to default to
+
+pyenv global 3.10.4
+```
+
+Verify it is working by entering the python interactive environment
+
+```java
+python
+```
+
+Output
+
+```java
+Python 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+```
+
+## Install virtualenv
+
+```java
+pip install pipx
+
+pipx install virtualenv
+```
+
+```java
+  installed package virtualenv 20.25.0, installed using Python 3.10.4
+  These apps are now globally available
+    - virtualenv
+done! ✨ 🌟 ✨
+```
+
+How to use `virtualenv`
+
+```java
+virtualenv --help
+```
+
+## install java 8
+
+```java
+sudo apt update
+sudo apt install openjdk-8-jdk
+```
+
+Verify installation
+
+```java
+java -version
+```
+
+Output
+
+```java
+openjdk version "1.8.0_392"
+OpenJDK Runtime Environment (build 1.8.0_392-8u392-ga-1~22.04-b08)
+OpenJDK 64-Bit Server VM (build 25.392-b08, mixed mode)
+```
+
+### Set a default Java version (if you have more than one)
+
+https://computingforgeeks.com/how-to-set-default-java-version-on-ubuntu-debian/
+
+```java
+sudo update-java-alternatives --list
+```
+
+Output
+
+```java
+java-1.8.0-openjdk-amd64       1081       /usr/lib/jvm/java-1.8.0-openjdk-amd64
+```
+
+If you have multiple Java versions, choose a default via:
+
+```java
+sudo update-alternatives --config java
+```
+
+### Set JAVA_HOME
+
+in `.bashrc`
+
+```java
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+```
+
+## rsync hard drive
+
+```java
+
+```
 
 ### Set up another computer
 
@@ -400,6 +615,7 @@ XDG_CURRENT_DESKTOP=ubuntu:GNOME gnome-control-center
 ```
 
 ## Change Your SSH Port in Linux
+
 To grand you all the necessary admin rights, always enter the command sudo -i at the beginning of every session:
 
 ```
@@ -444,7 +660,7 @@ sudo ufw allow 52222/tcp
 sudo ufw deny 22/tcp
 sudo ufw enable
 
-sudo ufw status 
+sudo ufw status
 
 sudo ufw status verbose
 
@@ -457,10 +673,10 @@ New profiles: skip
 
 To                         Action      From
 --                         ------      ----
-52222/tcp                  ALLOW IN    Anywhere                  
-22/tcp                     DENY IN     Anywhere                  
-52222/tcp (v6)             ALLOW IN    Anywhere (v6)             
-22/tcp (v6)                DENY IN     Anywhere (v6) 
+52222/tcp                  ALLOW IN    Anywhere
+22/tcp                     DENY IN     Anywhere
+52222/tcp (v6)             ALLOW IN    Anywhere (v6)
+22/tcp (v6)                DENY IN     Anywhere (v6)
 ```
 
 ## verify ufw status after reboot
@@ -502,4 +718,3 @@ At this point, you should allow all of the other connections that your server ne
 
 - HTTP on port 80, which is what unencrypted web servers use, using sudo ufw allow http or sudo ufw allow 80
 - HTTPS on port 443, which is what encrypted web servers use, using sudo ufw allow https or sudo ufw allow 443
-
