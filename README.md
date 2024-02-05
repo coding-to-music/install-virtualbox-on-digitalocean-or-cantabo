@@ -142,6 +142,24 @@ Restart ssh
 systemctl restart sshd
 ```
 
+Likely this is already installed:
+
+To install the full GNOME Desktop, run:
+
+```java
+sudo apt install ubuntu-desktop
+
+# start the GNOME desktop
+
+sudo /etc/init.d/gdm3 start
+```
+
+Output
+
+```java
+Starting gdm3 (via systemctl): gdm3.service.
+```
+
 Verify can use GUI
 
 ```java
