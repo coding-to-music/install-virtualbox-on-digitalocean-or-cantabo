@@ -126,6 +126,43 @@ chmod 600 both public and private keys in .ssh
 ssh -vT git@github.com
 ```
 
+## For Remote Desktop, verify that X11Forwarding is set to yes
+
+```java
+sudo vi /etc/ssh/ssh_config
+
+# Add/modify following line:
+
+X11Forwarding yes
+```
+
+Restart ssh
+
+```java
+systemctl restart sshd
+```
+
+Verify can use GUI
+
+```java
+ssh -X username@remotemachine_ip_address
+
+# add debug info
+ssh -X -v username@remotemachine_ip_address
+
+xmessage -center hello!
+
+# In case you don't have xmessage, these are alternatives:
+
+# sudo apt install xdg-utils
+
+xdg-open .
+
+xterm
+
+# After logging in, you can try the following commands for opening a X window: xterm, xclock, xcalc, xedit, etc
+```
+
 ## Install Chrome Remote Desktop (Ubuntu 20.04) on Google Cloud 2022
 
 https://www.youtube.com/watch?v=2n4kwxUlX48&ab_channel=ChrisCheng
@@ -143,6 +180,16 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 ```
 sudo apt install ./chrome-remote-desktop_current_amd64.deb
 ```
+
+Then go to
+
+https://remotedesktop.google.com/headless
+
+Follow instructions to generate a token that will communicate with Google
+
+Then verify the desktop is visible
+
+https://remotedesktop.google.com/access
 
 ## install node, nvm
 
