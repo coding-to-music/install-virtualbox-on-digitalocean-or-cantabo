@@ -160,6 +160,24 @@ Output
 Starting gdm3 (via systemctl): gdm3.service.
 ```
 
+To start Gnome:
+
+```java
+systemctl start gdm3
+```
+
+To restart Gnome:
+
+```java
+systemctl restart gdm3
+```
+
+To stop Gnome:
+
+```java
+systemctl stop gdm3
+```
+
 Verify can use GUI
 
 ```java
