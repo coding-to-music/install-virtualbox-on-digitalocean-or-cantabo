@@ -498,7 +498,7 @@ run-cmd "sudo apt-get install xrdp -y"
 #---------------------------------------------------------------------------------------#
 run-cmd "echo 'xfce4-session' > /root/.xsession"
 # the above command is for presentation only. the nested quotes i needed were causing
-# poblems , so i had to hard code the command and run it on the following line
+# problems , so i had to hard code the command and run it on the following line
 echo "xfce4-session" > /root/.xsession
 
 # install the version of Virtualbox from the repository #
